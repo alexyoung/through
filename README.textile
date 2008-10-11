@@ -1,0 +1,6 @@
+h2. Installation
+
+# Install libgeoip (sudo port install libgeoip)
+# Install the ruby binding (sudo gem install geoip_city)
+# Get the data: (curl -O http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz)
+# Get some time zone mapping data (curl http://www.maxmind.com/timezone.txt > data/timezone.txt)
