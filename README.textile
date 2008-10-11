@@ -1,3 +1,14 @@
+h2. Overview
+
+Through is a small geolocation web API.  You can use it to:
+
+* Look up the location of an IP address
+* Find out the time zone for a location
+* Get responses in JSON
+* Centralise your geographical data so each of your apps don't need to store it
+
+I didn't want to reproduce the same functionality across my web apps, so I thought an API would be a good solution.
+
 h2. Installation
 
 # Install libgeoip (sudo port install libgeoip)
