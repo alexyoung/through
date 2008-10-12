@@ -8,7 +8,10 @@ module Through
   end
   
   def self.time_zone(options = {})
-    request "/time_zone/#{options[:ip]}"
+    time_zone = request "/time_zone/#{options[:ip]}"
+    if time_zone
+      time_zone['rails'] = ActiveSupport::TimeZone::MAPPING.index(time_zone['country_name'])
+    end
   end
   
   def self.request(url)
