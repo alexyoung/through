@@ -12,10 +12,15 @@ module Through
     if time_zone
       time_zone['rails'] = ActiveSupport::TimeZone::MAPPING.index(time_zone['country_name'])
     end
+    time_zone
   end
   
   def self.request(url)
-    response = open(SERVER + url).read
-    ActiveSupport::JSON.decode response
+    Timeout::timeout(3) do
+      response = open(SERVER + url).read
+      ActiveSupport::JSON.decode response
+    end
+  rescue Timeout::Error
+    nil
   end
 end
